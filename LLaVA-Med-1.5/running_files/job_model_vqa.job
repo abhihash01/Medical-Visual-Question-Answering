@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --job-name=evaluation.job
+#SBATCH --output=/home/aabhilash/med_vlms/LLaVA-Med/running_files/evaluation_out.txt
+#SBATCH --error=/home/aabhilash/med_vlms/LLaVA-Med/running_files/evaluation_err.txt
+#SBATCH --time=2-00:00
+#SBATCH --mem=50000
+#SBATCH --gres=gpu:1
+
+# Test CUDA compiler (not needed by deep learning people, we just use the python libraries)
+#/cm/shared/apps/cuda11.1/toolkit/11.1.1/bin/nvcc -o saxpy /home/<netid>/cuda_c_code/saxpy.cu && ./saxpy
+
+# Test nvidia-smi
+nvidia-smi
+
+echo "Running job in directory: $(pwd)"
+
+source /home/aabhilash/miniconda3/etc/profile.d/conda.sh
+# Test Python conda environment
+conda activate llava-med 
+/home/aabhilash/miniconda3/envs/llava-med/bin/python /home/aabhilash/med_vlms/LLaVA-Med/llava/eval/model_vqa.py --model-path microsoft/llava-med-v1.5-mistral-7b \
+    --question-file ../datasets/Slake1.0/test.json \
+    --image-folder ../datasets/Slake1.0/imgs \
+    --answers-file /home/aabhilash/med_vlms/LLaVA-Med/running_files/test-answer-file.jsonl

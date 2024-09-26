@@ -1,0 +1,41 @@
+Tue Aug  6 07:27:51 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.30.02              Driver Version: 530.30.02    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Quadro RTX 8000                 On | 00000000:3F:00.0 Off |                  Off |
+| 33%   33C    P8               27W / 260W|      1MiB / 49152MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Running job in directory: /home/aabhilash/med_vlms/LLaVA-Med
+the device is 
+cuda
+done
+loaded the model
+the shape of image tensor is
+torch.Size([1, 3, 336, 336])
+size is
+torch.Size([1, 3, 336, 336])
+USER: Tell me about the image
+<im_start><image><im_end>
+USER: Tell me about the image
+raw prompt
+[INST] <im_start><image><im_end>
+USER: Tell me about the image [/INST]
+stop string
+
+the length of the output is
+1
+quadrant of the abdomen, which is causing a mass effect on the small bowel. This means that the mass is exerting pressure on the small bowel, potentially leading to complications such as bowel obstruction or other functional issues. </s>
+quadrant of the abdomen, which is causing a mass effect on the small bowel. This means that the mass is exerting pressure on the small bowel, potentially leading to complications such as bowel obstruction or other functional issues. </s>
